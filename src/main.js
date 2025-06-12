@@ -9,11 +9,6 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import zhTwEl from 'element-plus/es/locale/lang/zh-tw'
 
-//Vant
-import '@vant/touch-emulator'
-import { Locale } from 'vant'
-import zhTwVant from 'vant/es/locale/lang/zh-TW'
-Locale.use('zh-TW', zhTwVant)
 
 //Font Awesome
 /* import the fontawesome core */

@@ -8,7 +8,6 @@ import { VantResolver } from '@vant/auto-import-resolver'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
-import { VitePWA } from 'vite-plugin-pwa';
 import axios from 'axios';
 
 // https://vitejs.dev/config/
@@ -23,10 +22,10 @@ export default defineConfig({
     DirResolverHelper(),
     AutoImports({
       imports: ['vue'],
-      resolvers: [dirResolver(), ElementPlusResolver(), VantResolver()]
+      resolvers: [dirResolver(), ElementPlusResolver()]
     }),
     Components({
-      resolvers: [ElementPlusResolver(), VantResolver()]
+      resolvers: [ElementPlusResolver()]
     }),
   ],
   resolve: {
