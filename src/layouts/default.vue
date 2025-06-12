@@ -1,20 +1,25 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterView,useRoute  } from 'vue-router'
+import {getMenuName} from '@/router/menu'
+
+const route = useRoute()
+const currentAppName = computed(()=>getMenuName(route.path) ?? '')
+
 </script>
 
 <template>
   <div
     class="h-screen w-screen bg-gradient-to-tr from-pink-500 via-purple-700 to-indigo-900 text-white flex items-center justify-center overflow-hidden"
   >
+    <headerCom />
     <!-- logo   -->
-    <div class="text-[20px] xl:text-[30px] font-semibold tracking-wide drop-shadow-md select-none fixed top-6 left-6 z-50 logo">Ruru’s 30 Questions</div>
     <div
       class="w-[1220px] mt-[60px] m-[10px] max-w-full h-[90vh] p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg flex flex-col overflow-hidden"
     >
-      <!-- Header -->
-      <header class="h-16 flex items-center justify-between mb-6 px-6">
-        <h1 class="text-2xl font-extrabold tracking-wide drop-shadow-md">Excel 檢查功能</h1>
-      </header>
+      <!-- Title -->
+      <div class="h-8 flex items-center justify-between mb-6 px-6">
+        <h1 class="text-2xl font-extrabold tracking-wide drop-shadow-md">{{currentAppName}}</h1>
+      </div>
 
       <!-- Main Content -->
       <main

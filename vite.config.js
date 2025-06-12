@@ -13,7 +13,7 @@ import axios from 'axios';
 // https://vitejs.dev/config/
 
 export default defineConfig({
-  base: '/sheetCheck/',
+  base: '/RuRuQuestions/',
   plugins: [
     vue(),
     // 该辅助插件也是必需的 👇

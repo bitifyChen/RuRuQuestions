@@ -7,7 +7,7 @@ import { useCookies } from '@vueuse/integrations/useCookies'
 const cookies = useCookies(['token'])
 const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
-  history: createWebHistory('/sheetCheck/'),
+  history: createWebHistory('/RuRuQuestions/'),
   routes
 })
 
