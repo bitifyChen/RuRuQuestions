@@ -8,13 +8,14 @@ const jsonData = ref([])
 const errors = ref({})
 
 // 用 computed 合併成一個渲染用陣列
+const showOnlyErrors = ref(false)
 const tableRows = computed(() => {
   return jsonData.value.map((row, idx) => ({
     originalIndex: idx, // 原始陣列的 index (若未排序時同 idx)
     displayIndex: idx + 2, // 你表格裡顯示的行號（從 2 開始）
     ...row,
     error: errors.value[idx] || ''
-  }))
+  })).filter(row => !showOnlyErrors.value || row.error)
 })
 
 function fillMergedCells(worksheet) {
@@ -132,8 +133,12 @@ function handleFileUpload(event) {
         </div>
       </div>
     </div>
-
+  
     <!-- 資料表格 -->
+    <div class=""   v-if="jsonData.length">
+      <el-button type="danger" round @click="showOnlyErrors = !showOnlyErrors" v-show="!showOnlyErrors">只顯示錯誤</el-button>
+      <el-button type="primary" round @click="showOnlyErrors = !showOnlyErrors" v-show="showOnlyErrors">顯示所有</el-button>
+    </div>
     <div
       v-if="jsonData.length"
       class="overflow-auto border border-white/40 rounded-2xl bg-white/30 backdrop-blur-md shadow-lg"
