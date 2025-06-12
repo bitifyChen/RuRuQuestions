@@ -1,0 +1,1 @@
+import{_ as o,c as t,b as c,r,o as s}from"./index-CBxp2Ck6.js";const n={},_={class:"empty"};function a(m,p){const e=r("router-view");return s(),t("div",_,[c(e)])}const d=o(n,[["render",a]]);export{d as default};
