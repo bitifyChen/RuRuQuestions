@@ -9,7 +9,7 @@ const currentAppName = computed(()=>getMenuName(route.path) ?? '')
 
 <template>
   <div
-    class="h-screen w-screen bg-gradient-to-tr from-pink-500 via-purple-700 to-indigo-900 text-white flex items-center justify-center overflow-hidden"
+    class="h-screen w-screen text-white flex items-center justify-center overflow-hidden"
   >
     <headerCom />
     <!-- logo   -->
