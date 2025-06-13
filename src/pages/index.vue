@@ -28,7 +28,8 @@ const handleSelect = (item) => {
 </script>
 
 <template>
-  <section class="text-center space-y-6 max-w-[1220px] mx-auto">
+  <section class="text-center space-y-6 max-w-[1220px] mx-auto ">
+    <menuCom class="absolute top-4 right-4"/>
     <h2 class="text-4xl font-bold tracking-wide logo">Ruru’s 30 Questions</h2>
     <div class="ruru-input">
       <el-autocomplete

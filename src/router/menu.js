@@ -6,7 +6,7 @@ export const path = () =>[
         {
         name:'日期間距計算功能',
         path:'/dateCalculation'
-    }
+    },
 ]
 
 export const getMenuName = (routerPath) => path().find(item => item.path === routerPath)?.name

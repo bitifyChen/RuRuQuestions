@@ -21,17 +21,21 @@ const currentAppName = computed(()=>getMenuName(route.path) ?? '')
         <h1 class="text-2xl font-extrabold tracking-wide drop-shadow-md">{{currentAppName}}</h1>
       </div>
 
-      <!-- Main Content -->
-      <main
-        class="flex-1 overflow-auto rounded-lg bg-white/20 p-6 backdrop-blur-md border border-white/30 shadow-inner relative"
-      >
-        <RouterView />
-      </main>
+      <!-- Main Content with Element Plus Scrollbar -->
+       <div class="flex-1 overflow-hidden">
+        <el-scrollbar class="h-full  rounded-lg bg-white/20 p-6 backdrop-blur-md border border-white/30 shadow-inner relative">
+          <RouterView />
+        </el-scrollbar>
+       </div>
     </div>
   </div>
 </template>
 <style>
 .logo {
   font-family: 'Caveat', cursive;
+}
+.el-scrollbar__thumb {
+  background-color: rgba(255, 255, 255, 0.87);
+  border-radius: 4px;
 }
 </style>
