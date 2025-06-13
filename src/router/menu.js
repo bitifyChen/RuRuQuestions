@@ -2,6 +2,10 @@ export const path = () =>[
     {
         name:'Excel檢查功能',
         path:'/excelCheck'
+    },
+        {
+        name:'日期間距計算功能',
+        path:'/dateCalculation'
     }
 ]
 
