@@ -1,0 +1,1 @@
+import{e as t,c as s,o as a,a as o,b as c,u as r,f as n,g as u,R as i}from"./index-DGx74SFh.js";const _={class:"h-screen w-screen text-white flex items-center justify-center overflow-hidden"},l={class:"flex-1 overflow-auto p-6relative"},h={__name:"empty",setup(f){const e=n();return t(()=>u(e.path)??""),(m,p)=>(a(),s("div",_,[o("main",l,[c(r(i))])]))}};export{h as default};
