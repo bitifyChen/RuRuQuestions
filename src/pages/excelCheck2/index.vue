@@ -58,6 +58,8 @@ function getHeaderMap(worksheet) {
   }
   return headers
 }
+const targets = ref(['五通號', '五通', '五通碼','序號']) // 把你要檢查的關鍵字都放在這
+const totalTargets = computed(() => [...targets.value])
 
 function handleFileUpload(event) {
   const file = event.target.files[0]
@@ -87,13 +89,15 @@ function handleFileUpload(event) {
         }
 
         Object.entries(row).forEach(([key, value]) => {
-          if (key.includes('五通號')) {
+        const targets = totalTargets.value; // 把你要檢查的關鍵字都放在這
+        const exists = targets.some(target => key.includes(target));
+
+        if (exists) {
             const err = validateWuTong(value)
             if(value)allRows.push({
                 sheet: sheetName,
                 rowIndex: rowIdx + 2, // 真實 Excel 行數
                 value: value,
-                message: '1212',
                 error:validateWuTong(value)
               })
           }
@@ -121,6 +125,7 @@ function handleFileUpload(event) {
           class="block mb-4 text-xl font-bold text-gray-700 text-center select-none"
         >
           選擇 Excel 檔案 (.xlsx, .xls)
+          <div class="text-gray-600 text-sm">將針對{{ totalTargets.join(',') }} 進行檢查</div>
         </label>
         <input
           ref="fileInput"
